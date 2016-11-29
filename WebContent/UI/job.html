@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="lib/angular.min.js"></script>
+</head>
+<body>
+
+<div data-ng-app="myApp" ng-controller="jobcontroller as cntrl">
+
+<div ng-repeat="jon in cntrl.jobs">
+{{job.id}}
+{{job.title}}
+{{job.company}}
+{{job.jobdetails}}
+{{job.doc}}
+{{job.status}}
+{{job.lastdate}}
+{{job.userid}}
+</div>
+
+</div>
+<script src="js/job_sevice.js"></script>
+<script src="js/jobCtrl.js"></script>
+</body>
+</html>

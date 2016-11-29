@@ -1,4 +1,4 @@
-var mainApp = angular.module("mainApp", ['ngRoute']);
+var mainApp = angular.module("mainApp", ['ngRoute','registerApp','myblogApp','myforumApp']);
 
 mainApp.config(['$routeProvider', function($routeProvider) {
    $routeProvider.
@@ -16,6 +16,10 @@ mainApp.config(['$routeProvider', function($routeProvider) {
 	      templateUrl: 'UI/Blog.html', 
 	      controller: 'BlogController'
 	   }).
+	   when('/Forum', {
+		      templateUrl: 'UI/Forum.html', 
+		      controller: 'ForumControl'
+		   }).
    
    otherwise({
       redirectTo: '/'

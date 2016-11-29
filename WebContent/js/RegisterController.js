@@ -1,29 +1,35 @@
-(function () {
-    'use strict';
-
-    angular
-        .module('app')
-        .controller('RegisterController', RegisterController);
-
-    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
-    function RegisterController(UserService, $location, $rootScope, FlashService) {
-        var vm = this;
-
-        vm.register = register;
-
-        function register() {
-            vm.dataLoading = true;
-            UserService.Create(vm.user)
-                .then(function (response) {
-                    if (response.success) {
-                        FlashService.Success('Registration successful', true);
-                        $location.path('/login');
-                    } else {
-                        FlashService.Error(response.message);
-                        vm.dataLoading = false;
-                    }
-                });
-        }
-    }
-
-})();
+var app = angular.module('registerApp',[]);
+app.controller('RegisterController', [ '$scope', '$http', function($scope, $http) {
+	var BASE_URL = 'http://localhost:8083/backendcollab/';
+	console.log("register started");
+	$scope.submit = function() {
+		console.log("end");
+		$scope.users = {	
+			
+			username : $scope.username,
+			mail:$scope.mail,
+			password:$scope.password,
+			mobile : $scope.mobile,
+			dob:$scope.dob,
+			role:$scope.role,
+			address:$scope.address,
+			gender:$scope.gender
+		}
+		$http({
+			method : 'POST',
+			url : BASE_URL + '/register',
+			data : $scope.users
+		}).success(function(data, status, headers, config) {
+			$scope.username='';
+			$scope.mail='';
+			$scope.password='';
+			$scope.mobile='';
+			$scope.dob='';
+			$scope.role='';
+			$scope.address='';
+			$scope.gender='';
+		}).error(function(data,status,headers,config){
+			alert("error");
+		});
+	};
+}]);
