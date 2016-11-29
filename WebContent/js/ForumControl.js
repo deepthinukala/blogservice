@@ -2,7 +2,7 @@ var myforumapp = angular.module('myforumApp',[]);
 myforumapp.controller('ForumControl', [ '$scope', '$http', function($scope, $http) {
 var BASE_URL = 'http://localhost:8083/backendcollab/';
 
-$scope.getAllForums= function() {
+$scope.getAllForum= function() {
 console.log("get all forums")
 $http({
 method : 'GET',
@@ -36,7 +36,7 @@ $scope.userid='';
 $scope.name='';
 $scope.description='';
 $scope.doc='';
-$scope.getAllForums();
+$scope.getAllForum();
 }).error(function(data,status,headers,config){
 alert("error");
 });
@@ -46,12 +46,13 @@ $http({
 method:'DELETE',
 url:BASE_URL+'/deleteforum/'+id
 }).success(function(data,status,headers,config){
-$scope.getAllForums();
+$scope.getAllForum();
 })
 };
-$scope.editforum=function(id,name,description){
+$scope.editforum=function(id,name,topic,description){
 $scope.id=id;
 $scope.name=name;
+$scope.topic=topic;
 $scope.description=description;
 }
 }]);

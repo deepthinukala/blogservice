@@ -5,7 +5,7 @@ var BASE_URL = 'http://localhost:8083/backendcollab/';
 $scope.getAllBlogs= function() {
 console.log("get all blogs")
 $http({
-method : 'GET',
+method : 'GET', 
 url : BASE_URL+'/blog'
 }).success(function(data, status, headers, config) {
 $scope.blogs=data;

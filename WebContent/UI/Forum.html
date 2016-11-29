@@ -4,6 +4,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" src="resources/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular-route.min.js"></script> 
 <style type="text/css">
 .btn1 {
 height: 30px;
@@ -22,19 +23,19 @@ border-radius:1px;
 <h2> Create Forum</h2>
 <input type="hidden" data-ng-model="id" >
 <div class="form-group">
-<label for="title" class="col-sm-3 control-label">ForumName</label>
+<label for="name" class="col-sm-3 control-label">ForumName</label>
 <div class="col-sm-9">
 <input type="text" name="title" data-ng-model="name" class="form-control" autofocus> <br>
 </div></div>
 <div class="form-group">
-<label for="title" class="col-sm-3 control-label">Forumtopic</label>
+<label for="topic" class="col-sm-3 control-label">Forumtopic</label>
 <div class="col-sm-9">
 <input type="text" name="title" data-ng-model="topic" class="form-control" autofocus> <br>
 </div></div>
 <div class="form-group">
 <label for="description" class="col-sm-3 control-label">ForumDesc</label>
 <div class="col-sm-9">
-<textarea draggable="false" rows="10" name="content" data-ng-model="description" class="form-control"></textarea>
+<textarea draggable="false" rows="10" name="description" data-ng-model="description" class="form-control"></textarea>
 </div></div>
 <div class="form-group">
 <div class="col-sm-9 col-sm-offset-3">
@@ -52,7 +53,7 @@ border-radius:1px;
 </div>
 </form>
 </div></div></div>
-<div data-ng-init="getAllforums()">
+<div data-ng-init="getAllForum()">
 <div data-ng-repeat="forum in forums | filter:search">
 
 
@@ -62,12 +63,12 @@ border-radius:1px;
 <div class="well">
 <h2 class="text-info">{{forum.name}}</h2> 
 <hr> 
-<p>{{forum.desc}}</p>
+<p>{{forum.description}}</p>
 <hr>
 <hr>
 <p>{{forum.topic}}</p>
-<p><button data-ng-click="editforum(forum.id,froum.forumdesc,blog.name)">edit</button>
-<button data-ng-click="deleteForum(forum.id)" class="btn btn-primary btn-danger">delete</button></p>
+<p><button data-ng-click="editforum(forum.id,forum.name,forum.description,forum.topic)">edit</button>
+<button data-ng-click="deleteforum(forum.id)" class="btn btn-primary btn-danger">delete</button></p>
 </div>
 </div></div></div>
 
