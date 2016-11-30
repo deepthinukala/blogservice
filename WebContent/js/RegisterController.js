@@ -1,5 +1,5 @@
-var app = angular.module('registerApp',[]);
-app.controller('RegisterController', [ '$scope', '$http', function($scope, $http) {
+var regapp = angular.module('registerApp',[]);
+regapp.controller('RegisterController', [ '$scope', '$http', function($scope, $http) {
 	var BASE_URL = 'http://localhost:8083/backendcollab/';
 	console.log("register started");
 	$scope.submit = function() {
