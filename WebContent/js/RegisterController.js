@@ -13,7 +13,8 @@ regapp.controller('RegisterController', [ '$scope', '$http', function($scope, $h
 			dob:$scope.dob,
 			role:$scope.role,
 			address:$scope.address,
-			gender:$scope.gender
+			gender:$scope.gender,
+			status:$scope.status
 		}
 		$http({
 			method : 'POST',
@@ -28,6 +29,7 @@ regapp.controller('RegisterController', [ '$scope', '$http', function($scope, $h
 			$scope.role='';
 			$scope.address='';
 			$scope.gender='';
+			$scope.status='';
 		}).error(function(data,status,headers,config){
 			alert("error");
 		});
