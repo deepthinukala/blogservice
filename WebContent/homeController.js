@@ -1,6 +1,6 @@
-var mainApp = angular.module("mainApp", ['ngRoute','registerApp','myblogApp','myforumApp','myfriendapp','loginApp','ngCookies']);
+var app= angular.module("mainApp", ['ngRoute','registerApp','myblogApp','myforumApp','app1','myfriendapp','loginApp','ngCookies']);
 
-mainApp.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', function($routeProvider) {
    $routeProvider.
    when("/home", {
        templateUrl : "home.html",
@@ -29,6 +29,14 @@ mainApp.config(['$routeProvider', function($routeProvider) {
 			    templateUrl: 'UI/Friend.html', 
 			    controller: 'FriendController'
 			   }).
+		when('/newrequests', {
+				 templateUrl: 'UI/newrequests.html', 
+				 controller: 'myfrndsCntrl'
+				   }).
+		when('/myfriends', {
+				templateUrl: 'UI/myfriends.html', 
+				controller: 'myfrndsCntrl'
+				}).
    
    otherwise({
       redirectTo: '/'
@@ -36,11 +44,11 @@ mainApp.config(['$routeProvider', function($routeProvider) {
 	
 }]);
 
-var app = angular.module('myApp', []);
+/*var app = angular.module('myApp', []);*/
 
-mainApp.controller('myController', function($scope) {
-    $scope.message = "Volvo";
-});
+//mainApp.controller('myController', function($scope) {
+  //  $scope.message = "Volvo";
+//});
 /*mainApp.controller("Logincontroller", function ($scope) {
 	$scope.username = "deepthi";
 	$scope.password = "deepthi"

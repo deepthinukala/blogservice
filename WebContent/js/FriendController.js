@@ -1,5 +1,5 @@
-var frapp=angular.module('myfriendapp',[]);
-frapp.controller('FriendController',['$scope','$http',function($scope,$http){
+var app=angular.module('myfriendapp',[]);
+app.controller('FriendController',['$scope','$http',function($scope,$http){
 var BASE_URL = 'http://localhost:8083/backendcollab/';
 $scope.getAllUsers= function() {
   console.log("usersctrl")

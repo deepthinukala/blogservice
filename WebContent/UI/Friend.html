@@ -4,10 +4,13 @@
 <meta charset="ISO-8859-1">
 <title>Friends</title>
 
-<script type="text/javascript" src="resources/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular.min.js"></script>
 <script type="text/javascript" src="lib/angular-route.min.js"></script> 
 </head>
 <body data-ng-app="myfriendapp">
+
+<a href="#myfriends">My Friends</a>
+<a href="#newrequests">My Requests</a>
 <div data-ng-controller="FriendController">
 <div class="container" style="padding-top:10px">
  <div class="row">
@@ -53,7 +56,7 @@
                                         <a href="#">{{user.mail}}</a>
                                     </td>
                                     <td style="width: 20%;">
-                                      <button data-ng-click="sendrequest(user.id)" class="btn btn-success">Send Request</button>  
+                                      <button data-ng-click="sendrequest(user.username)" class="btn btn-success">Send Request</button>  
                                     </td>
                                 </tr>
                                 </tbody>
@@ -69,5 +72,7 @@
 </div>
 </div>
 <script src="FriendController.js"></script>
+<script src="myfrndsCntrl.js"></script>
+
 </body>
 </html>
