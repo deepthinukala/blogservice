@@ -37,6 +37,10 @@ app.config(['$routeProvider', function($routeProvider) {
 				templateUrl: 'UI/myfriends.html', 
 				controller: 'myfrndsCntrl'
 				}).
+				when('/chat', {
+					 templateUrl: 'UI/chat.html', 
+					 controller: 'chatController'
+					   }).
    
    otherwise({
       redirectTo: '/'

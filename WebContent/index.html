@@ -45,6 +45,10 @@
    <script type="text/javascript" src="lib/angular.min.js"></script> 
    <script type="text/javascript" src="lib/angular-route.min.js"></script> 
    <script type="text/javascript" src="lib/angular-cookies.js"></script> 
+   
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
   
   
      <script src="homeController.js"></script>
@@ -54,8 +58,10 @@
      <script src="js/ForumControl.js"></script>
      <script src="js/FriendController.js"></script>
      <script src="js/loginController.js"></script>
-      <script src="js/loginService.js"></script>
-      <script type="text/javascript" src="js/myfrndsCntrl.js"></script>
+     <script src="js/loginService.js"></script>
+     <script src="js/chatService.js"></script>
+     <script src="js/chatController.js"></script>
+     <script type="text/javascript" src="js/myfrndsCntrl.js"></script>
      
      
 </head>
@@ -239,6 +245,7 @@
                                 <li class=""><a href="#/Blog" data-toggle="tab">Blog</a></li>
                                 <li class=""><a href="#/Forum" data-toggle="tab">Forum</a></li>
                                 <li class=""><a href="#/Friend" data-toggle="tab">Friend</a></li>
+                              <li class=""><a href="#/chat" data-toggle="tab">Chat</a></li>
                             </ul>
 
                             <div class="tab-content">
