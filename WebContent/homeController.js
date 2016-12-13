@@ -3,7 +3,7 @@ var app= angular.module("mainApp", ['ngRoute','registerApp','myblogApp','myforum
 app.config(['$routeProvider', function($routeProvider) {
    $routeProvider.
    when("/home", {
-       templateUrl : "home.html",
+       templateUrl : 'UI/home.html',
        controller:'loginController',
    	controllerAs:'vm'
    }).
@@ -17,6 +17,10 @@ app.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'UI/register.html', 
       controller: 'RegisterController'
    }).
+   when('/UserProfile', {
+	      templateUrl: 'UI/UserProfile.html', 
+	      controller: 'RegisterController'
+	   }).
    when('/Blog', {
 	      templateUrl: 'UI/Blog.html', 
 	      controller: 'BlogController'
@@ -25,6 +29,10 @@ app.config(['$routeProvider', function($routeProvider) {
 		      templateUrl: 'UI/Forum.html', 
 		      controller: 'ForumControl'
 		   }).
+		   when('/individualforum', {
+			      templateUrl: 'UI/IndividualForum.html', 
+			      controller: 'commentControl'
+			   }).
 		when('/Friend', {
 			    templateUrl: 'UI/Friend.html', 
 			    controller: 'FriendController'
@@ -37,10 +45,10 @@ app.config(['$routeProvider', function($routeProvider) {
 				templateUrl: 'UI/myfriends.html', 
 				controller: 'myfrndsCntrl'
 				}).
-				when('/chat', {
-					 templateUrl: 'UI/chat.html', 
-					 controller: 'chatController'
-					   }).
+		when('/chat', {
+			templateUrl: 'UI/chat.html', 
+			controller: 'chatController'
+			}).
    
    otherwise({
       redirectTo: '/'

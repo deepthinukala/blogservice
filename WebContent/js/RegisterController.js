@@ -5,7 +5,6 @@ regapp.controller('RegisterController', [ '$scope', '$http', function($scope, $h
 	$scope.submit = function() {
 		console.log("end");
 		$scope.users = {	
-			
 			username : $scope.username,
 			mail:$scope.mail,
 			password:$scope.password,
@@ -34,4 +33,15 @@ regapp.controller('RegisterController', [ '$scope', '$http', function($scope, $h
 			alert("error");
 		});
 	};
+
+$scope.currentuser=function(id){
+		
+		console.log("oneuser")
+		$http({
+			method:'GET',
+			url:BASE_URL+'/oneuser/'+id
+		}).success(function(data,status,headers,config){
+			$scope.oneuser=data;
+		})
+	}
 }]);

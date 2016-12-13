@@ -5,6 +5,8 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="lib/angular.min.js"></script>
 <script type="text/javascript" src="lib/angular-route.min.js"></script> 
+<script type="text/javascript" src="commentControl.js"></script>
+<script type="text/javascript" src="ForumControl.js"></script>
 <style type="text/css">
 .btn1 {
 height: 30px;
@@ -61,7 +63,8 @@ border-radius:1px;
 <div class="row">
 <div class="span3">
 <div class="well">
-<h2 class="text-info">{{forum.name}}</h2> 
+<!-- <h2 class="text-info">{{forum.name}}</h2>  -->
+<h2 class="text-info"><a href="" data-ng-click="getforum(forum.id)">{{forum.name}}</a></h2>
 <hr> 
 <p>{{forum.description}}</p>
 <hr>
@@ -76,6 +79,6 @@ border-radius:1px;
 </div>
 </div>
 
-<script type="text/javascript" src="ForumControl.js"></script>
+
 </body>
 </html>

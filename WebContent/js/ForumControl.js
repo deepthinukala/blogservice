@@ -1,5 +1,5 @@
 var myforumapp = angular.module('myforumApp',[]);
-myforumapp.controller('ForumControl', [ '$scope', '$http', function($scope, $http) {
+myforumapp.controller('ForumControl', [ '$scope', '$http','$location','$rootScope', function($scope, $http,$location,$rootScope) {
 var BASE_URL = 'http://localhost:8083/backendcollab/';
 
 $scope.getAllForum= function() {
@@ -54,5 +54,22 @@ $scope.id=id;
 $scope.name=name;
 $scope.topic=topic;
 $scope.description=description;
+}
+
+$scope.getforum=function(id){
+	
+	console.log("iforum")
+	$http({
+		method: "GET",
+		url:BASE_URL+'/individualforum/'+id,
+	}).success(function(data,status,headers,config){
+		console.log("inside the forum")
+		$location.path('/individualforum');
+		console.log("after inside the forum")
+		$rootScope.individualforums=data;
+		console.log(data)
+	}).error(function(data, status, headers, config) {
+		alert("Error");
+	});
 }
 }]);

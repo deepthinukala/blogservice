@@ -6,8 +6,8 @@ mainApp.controller("Logincontroller", function ($scope) {
 	 
 });
   */
-var App = angular.module("loginApp", []);
-App.controller('loginController', LoginController);
+var app = angular.module("loginApp", []);
+app.controller('loginController', LoginController);
 
     LoginController.$inject = ['$location',  'AuthenticationService','$rootScope'];
  
