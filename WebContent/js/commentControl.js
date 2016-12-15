@@ -6,20 +6,24 @@ app.controller('commentControl', [ '$scope', '$http','$rootScope', function($sco
 		$scope.forumcomment={
 				comment:$scope.comment
 		}
+		console.log("into forum comment")
 		$http({
 			method:'POST',
 			url:BASE_URL+'/commentforum/'+id ,
 			data:$scope.forumcomment
 		}).success(function(data, status, headers, config) {
 			$scope.comment='';
+			console.log("able to comment")
 		})
 	}
 	$scope.getcomment=function(id){
+		console.log("into getcomment")
 		$http({
 			method:'GET',
 			url:BASE_URL+'/getforumcomment/'+id
 		}).success(function(data,status,headers,config){
 			$scope.comments=data;
+			console.log("retrieve through getcomment")
 		})
 	}
 	$scope.getuser=function(id){

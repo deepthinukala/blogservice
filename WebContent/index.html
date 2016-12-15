@@ -83,10 +83,14 @@
             <!-- Collect the nav links for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
+   <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
                     <li><a href="#home">HOME</a>
                     </li>
                     <li><a href="#services">Blog</a>
                     </li>
+                    
+   
+     <li data-ng-show="globals.currentUser.islogged"><a href="" data-ng-click="vm.logout()">logout</a></li>
 
                    <!--  <li><a href="#price-sec">Login</a>
                     </li>
@@ -240,14 +244,14 @@
                         <div class="panel-body">
                             <ul class="nav nav-pills" style="background-color: #ECECEC;">
                                 <li class=""><a href="#/home" data-toggle="tab">Home</a></li>
-                                <li class=""><a href="#/login" data-toggle="tab">Login</a></li>
-                                <li class=""><a href="#/register" data-toggle="tab">Register</a></li>
+                                <li class=""><a href="#/login" data-toggle="tab" data-ng-hide="globals.currentUser.islogged">Login</a></li>
+                      <li class="" data-ng-hide="globals.currentUser.islogged"><a href="#/register" data-toggle="tab">Register</a></li>
                                 <li class=""><a href="#/Blog" data-toggle="tab">Blog</a></li>
                                 <li class=""><a href="#/Forum" data-toggle="tab">Forum</a></li>
                                 <li class=""><a href="#/Friend" data-toggle="tab">Friend</a></li>
                                 <li class=""><a href="#/job" data-toggle="tab">Job</a></li>
                               <li class=""><a href="#/chat" data-toggle="tab">Chat</a></li>
-                              <li class=""><a href="#/UserProfile" data-toggle="tab">myProfile</a></li>
+                      <li class=""data-ng-show="globals.currentUser.islogged"><a href="#/UserProfile" data-toggle="tab">myProfile</a></li>
                             </ul>
 
                             <div class="tab-content">
