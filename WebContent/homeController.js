@@ -25,21 +25,21 @@ app.config(['$routeProvider', function($routeProvider) {
 	      templateUrl: 'UI/Blog.html', 
 	      controller: 'BlogController'
 	   }).
-	   when('/likes', {
-		      templateUrl: 'UI/likes.html', 
-		      controller: 'likeControl'
+	when('/likes', {
+		  templateUrl: 'UI/likes.html', 
+		  controller: 'likeControl'
 		   }).
-	   when('/Forum', {
-		      templateUrl: 'UI/Forum.html', 
-		      controller: 'ForumControl'
+	when('/Forum', {
+		  templateUrl: 'UI/Forum.html', 
+		  controller: 'ForumControl'
 		   }).
-		   when('/individualforum', {
-			      templateUrl: 'UI/IndividualForum.html', 
-			      controller: 'commentControl'
+    when('/individualforum', {
+		 templateUrl: 'UI/IndividualForum.html', 
+	     controller: 'commentControl'
 			   }).
-		when('/Friend', {
-			    templateUrl: 'UI/Friend.html', 
-			    controller: 'FriendController'
+    when('/Friend', {
+		templateUrl: 'UI/Friend.html', 
+		controller: 'FriendController'
 			   }).
 		when('/newrequests', {
 				 templateUrl: 'UI/newrequests.html', 

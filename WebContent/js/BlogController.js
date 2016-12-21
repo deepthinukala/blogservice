@@ -1,5 +1,5 @@
 var app = angular.module('myblogApp',[]);
-app.controller('BlogController', [ '$scope', '$http', '$location', '$rootScope',function($scope, $http,$location,$rootScope) {
+app.controller('BlogController', [ '$scope', '$http',function($scope, $http) {
 var BASE_URL = 'http://localhost:8083/backendcollab/';
 
 $scope.getAllBlogs= function() {
@@ -94,5 +94,16 @@ $scope.postlikes=function(id){
 		alert("success")
 	})
 	}*/
+
+$scope.like=function(id){
+	console.log("like and save it in db")
+	$http({
+		method : 'POST',
+		url : BASE_URL + '/likeblog/'+id,
+	}).success(function(data, status, headers, config) {
+		alert("success")
+	})
+	
+}
 
 }]);

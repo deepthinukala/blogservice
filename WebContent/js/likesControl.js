@@ -1,4 +1,4 @@
-app.controller('likeControl', [ '$scope', '$http','$rootScope', function($scope, $http,$rootScope) {
+/*app.controller('likeControl', [ '$scope', '$http','$rootScope', function($scope, $http,$rootScope) {
 	var BASE_URL = 'http://localhost:8083/backendcollab/';
 	$scope.iblog=$rootScope.individualblogs;
 	//console.log(individualforums)
@@ -34,4 +34,4 @@ app.controller('likeControl', [ '$scope', '$http','$rootScope', function($scope,
 			$scope.users=data;
 		})
 	}
-}])
+}])*/
