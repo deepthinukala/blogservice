@@ -55,12 +55,16 @@ border-radius:1px;
 <div class="row">
 <div class="span3">
 <div class="well">
-<h2 class="text-info">{{blog.blogName}}</h2> 
+<!-- <h2 class="text-info">{{blog.blogName}}</h2>  -->
+<h2 class="text-info"><a href="" data-ng-click="getblog(likes.id)">{{blog.blogName}}</a></h2>
 <hr> 
 <p>{{blog.blogDesc}}</p>
 <hr>
 <p><button data-ng-click="editblog(blog.blogid,blog.blogDesc,blog.blogName)">edit</button>
-<button data-ng-click="deleteblog(blog.blogid)" class="btn btn-primary btn-danger">delete</button></p>
+<button data-ng-click="deleteblog(blog.blogid)" class="btn btn-primary btn-danger">delete</button>
+<button align="right" class="btn btn-primary" data-ng-click="postlikes(likes.id)">Like</button>
+<!-- <div data-ng-init="getAlllikes(blog.blogid)">{{likes.id}} -->
+		<i class="fa fa-thumbs-up"></i>{{}}</li></p>
 </div>
 </div></div></div>
 

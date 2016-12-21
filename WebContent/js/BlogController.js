@@ -1,5 +1,5 @@
 var app = angular.module('myblogApp',[]);
-app.controller('BlogController', [ '$scope', '$http', function($scope, $http) {
+app.controller('BlogController', [ '$scope', '$http', '$location', '$rootScope',function($scope, $http,$location,$rootScope) {
 var BASE_URL = 'http://localhost:8083/backendcollab/';
 
 $scope.getAllBlogs= function() {
@@ -52,4 +52,47 @@ $scope.blogid=blogid;
 $scope.blogName=blogName;
 $scope.blogDesc=blogDesc;
 }
+
+
+$scope.getblog=function(id){
+	
+	console.log("likeb")
+	$http({
+		method: "GET",
+		url:BASE_URL+'/individualblog/'+id,
+	}).success(function(data,status,headers,config){
+		console.log("fetch likes")
+		$location.path('/likes');
+		console.log("after inside the forum")
+		$rootScope.individualblogs=data;
+		console.log(data)
+	}).error(function(data, status, headers, config) {
+		alert("Error");
+	});
+}
+
+/*$scope.getAlllikes= function(id) {
+	console.log("fetch likes")
+	$http({
+	method : 'GET', 
+	url : BASE_URL+'/getlikes/'+id
+	}).success(function(data, status, headers, config) {
+	$scope.likes=data;
+	$Scope
+	//alert(data); 
+	}).error(function(data, status, headers, config) {
+	alert("Error");
+	});
+	};
+
+$scope.postlikes=function(id){
+	console.log("save likes")
+	$http({
+		method : 'POST',
+		url : BASE_URL + '/likeblog/'+id,
+	}).success(function(data, status, headers, config) {
+		alert("success")
+	})
+	}*/
+
 }]);

@@ -1,21 +1,35 @@
-var app = angular.module('myApp', []);
-app.controller('jobController', ['JobService', function(JobService){
-	var self = this;
-	self.job = {id : '',title : '',company : '',jobdetails : '',
-			doc : '',status : '',lastdate : '',userid : ''
-				};
-	self.jobs=[]
-	self.getAllJobs = function(){
-		console.log('calling the method getAllJobs');
-		JobService
-		.getAllJobs()
-		.then(
-				function(data){
-					self.jobs = data;
-				}
-				);
+app.controller('jobctrl', ['$scope','$http',function($scope,$http) {
+	var BASE_URL = 'http://localhost:8083/backendcollab/';
+	$scope.submit=function(){
+		console.log("job")
+		$scope.job = {	
+				title : $scope.title,
+				company:$scope.company,
+				jobdetails:$scope.jobdetails,
+				lastdate: $scope.lastdate
+			}
+		console.log("able to create job")
+		$http({
+			method : 'POST',
+			url : BASE_URL+'/createjob'
+		}).success(function(data, status, headers, config) {
+			$scope.users=data;
+			//alert(data); 
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		});
 	};
-	self.getAllJobs();
-}]);
-	
-		
+
+	$scope.getjobs=function(){
+		console.log("able to get job")
+		$http({
+			method : 'GET',
+			url : BASE_URL+'/job'
+		}).success(function(data, status, headers, config) {
+			$scope.jobs=data;
+			//alert(data); 
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		})
+	};
+}])

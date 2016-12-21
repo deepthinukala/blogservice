@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <script type="text/javascript" src="lib/angular.min.js"></script> 
+ <script type="text/javascript" src="lib/angular-route.min.js"></script> 
+<script type="text/javascript" src="BlogController.js"></script>
+</head>
+<body data-ng-app="myblogApp">
+<h1 align="center">Blog</h1>
+
+<div data-ng-controller="likeControl">
+
+<h2>{{iblog.blogName}}</h2><br>
+<h3>Topic:{{iblog.blogDesc}}</h3><br>
+<button align="right" class="btn btn-primary" data-ng-click="postlikes(likes.id)">Like</button>
+<button align="right" class="text" data-ng-init="getAlllikes(likes.id)">Like</button>
+</div></body></html>

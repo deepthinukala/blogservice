@@ -62,6 +62,7 @@
      <script src="js/chatController.js"></script>
      <script type="text/javascript" src="js/myfrndsCntrl.js"></script>
      <script src="js/commentControl.js"></script>
+     <script src="js/jobCtrl.js"></script>
      
      
 </head>
@@ -88,9 +89,7 @@
                     </li>
                     <li><a href="#services">Blog</a>
                     </li>
-                    
-   
-     <li data-ng-show="globals.currentUser.islogged"><a href="" data-ng-click="vm.logout()">logout</a></li>
+<li data-ng-show="globals.currentUser.islogged"><a href="#/home" data-ng-click="vm.logout()">logout</a></li>
 
                    <!--  <li><a href="#price-sec">Login</a>
                     </li>

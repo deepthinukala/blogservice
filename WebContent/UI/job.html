@@ -3,25 +3,28 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<script type="text/javascript" src="lib/angular.min.js"></script>
+  <script src="js/jobCtrl.js"></script>
+    <script src="lib/style.css"></script>
 </head>
-<body>
+<body data-ng-app="mainApp">
+<div data-ng-init="getjobs()">
+<table><thead>
+<tr>
+<th>Job Title</th>
+<th> CompanyName</th>
+<th>Address</th>
+<th>Last Date</th>
+ </tr></thead>
+<tbody>
+<tr data-ng-repeat="job in jobs">
 
-<div data-ng-app="myApp" ng-controller="jobController">
-
-<div ng-repeat="jon in cntrl.jobs">
-{{job.id}}
-{{job.title}}
-{{job.company}}
-{{job.jobdetails}}
-{{job.doc}}
-{{job.status}}
-{{job.lastdate}}
-{{job.userid}}
+<td>{{job.title}}</td>
+<td>{{job.company}}</td>
+<td>{{job.jobdetails}}</td>
+<td>{{job.lastdate | date:'dd/MM/yyyy'}}</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-</div>
-<script src="js/job_sevice.js"></script>
-<script src="js/jobCtrl.js"></script>
 </body>
 </html>
